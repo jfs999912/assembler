@@ -1,9 +1,5 @@
 .global main
-;.equ PORTB, 0x05                   ;.equ DDRB, 0x04
-; .equ PORTD, 0x0B                  ; .equ DDRD, 0x0A                   ; .equ PIND, 0x09
-;.equ SPH, 0x3E
-;equ SPL, 0x3D
-; este es le if  then  else en ensamblador
+; este es el if-then -else de ASM
 ; va variando entre else y then al cambiar el valor de 25 a 26 segun condicion
 main:
 	LDI R16, 25  ; registro R16 se asigna el valor 25
