@@ -1,0 +1,31 @@
+.global main
+
+.equ DDRD, 0x0A
+.equ PORTD, 0x0B
+.equ DDRB, 0x04
+.equ PORTB, 0x05
+.equ PIND, 0x09
+
+main:
+	LDI	R16, 0X00
+ 	OUT	DDRD, R16
+	LDI	R17, 0XFF
+	OUT	PORTD, R17
+	OUT	DDRB, R17
+Val:	IN	R18, PIND
+	ANDI	R18, 0x0F
+	IN 	R19, PIND
+	SWAP 	R19
+	ANDI	R19, 0X0F
+	CP	R19, R18
+	BRBS	1, Igual
+	BRCC 	NAlto
+	OUT	PORTB, R18
+	RJMP	Val
+NAlto:	OUT	PORTB, R19
+	RJMP	Val
+
+Igual:	LDI	R20, 0X80
+	OUT	PORTB, R20
+	RJMP	Val
+
