@@ -13,11 +13,12 @@ $proot-distro install debian
 5. Inicia sesión en el entorno debian
    
    $proot-distro login debian
+
 6. instale la cadena de herramientas AVR
    
    $apt update
    
-   $apt install gcc-avr binutils-avr avr-libc
+   $apt install gcc-avr binutils-avr avr-libc avrdude gdb-avr
    
 
 después de seguir estos pasos podrá utilizar 
