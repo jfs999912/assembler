@@ -1,4 +1,6 @@
-.global main                                                                .equ PORTB, 0x05 
+.global main
+
+.equ PORTB, 0x05 
 .equ DDRB, 0x04                       
 .equ PORTD, 0x0B                      
 .equ DDRD, 0x0A                       
