@@ -30,5 +30,5 @@ para compilar:
 $avr-gcc -mmcu=atmega328p -DF_CPU=8000000UL 
 -x assembler-with-cpp light.s -o light.elf
 
-el archico con tu codigo TUARCHIVO.s
+el archivo con tu codigo TUARCHIVO.s
 en el ejemplo es light.s
