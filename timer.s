@@ -1,0 +1,33 @@
+.global main
+
+.equ DDRD, 0x0A
+.equ PORTD, 0x0B
+.equ TCCR0B, 0x25
+.equ TIMSK0, 0x6E
+.equ TCNT0, 0x26
+.equ SPH, 0x3E
+.equ SPL, 0x3D
+
+main:	RJMP	start 
+	.ORG	0x0020
+	RJMP	RSI_TO
+ 	
+start:	SEI
+	LDI	R16, 0XFF
+	LDI	R17, 0x08
+	OUT	DDRD, R16
+	OUT	SPH, R17
+	OUT	SPL,R16
+	LDI	R18, 0x00
+	OUT	PORTD, R18
+	LDI	R19, 0x05
+	OUT	TCCR0B, R19
+	LDI	R20, 0x01
+	STS	TIMSK0, R20
+	LDI	R21, 0x00
+	OUT	TCNT0, R21
+wait:	RJMP	wait
+
+RSI_TO:	INC	R18
+	OUT	PORTD, R18
+	RETI
